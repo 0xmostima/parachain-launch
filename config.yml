@@ -21,6 +21,8 @@ relaychain:
         - --force-authoring
       env:
         RUST_LOG: babe=debug # environment varitables for this node
+    - name: bob
+    - name: charlie
 
 # Parachain Configuration
 parachains:
@@ -61,6 +63,10 @@ parachains:
       - --name=relaychain-alice
     env:
       RUST_LOG: aura=debug # environment varitables for this node
+  - flags:
+    - --bob
+  - flags:
+    - --charlie
 # Config for second parachain
 - image: acala/karura-node:2.1.1
   chain: # this could be a string like `dev` or a config object
@@ -98,3 +104,7 @@ parachains:
       - --name=relaychain-alice
     env:
       RUST_LOG: aura=debug # environment varitables for this node
+  - flags:
+    - --bob
+  - flags:
+    - --charlie
