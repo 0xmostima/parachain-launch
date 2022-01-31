@@ -21,8 +21,6 @@ relaychain:
         - --force-authoring
       env:
         RUST_LOG: babe=debug # environment varitables for this node
-    - name: bob
-    - name: charlie
 
 # Parachain Configuration
 parachains:
@@ -54,19 +52,15 @@ parachains:
     RUST_LOG: sc_basic_authorship=trace
   volumePath: /acala/data # The path to mount volume and base path, default to /data
   nodes: # nodes config
-  - wsPort: 9948
-    rpcPort: 9939
-    port: 30339
+  - wsPort: 9947
+    rpcPort: 9936
+    port: 30336
     flags: # additional CLI flags for this node
       - --alice
     relaychainFlags: # additional CLI flags for relaychian part
       - --name=relaychain-alice
     env:
       RUST_LOG: aura=debug # environment varitables for this node
-  - flags:
-    - --bob
-  - flags:
-    - --charlie
 # Config for second parachain
 - image: acala/karura-node:2.1.1
   chain: # this could be a string like `dev` or a config object
@@ -104,7 +98,3 @@ parachains:
       - --name=relaychain-alice
     env:
       RUST_LOG: aura=debug # environment varitables for this node
-  - flags:
-    - --bob
-  - flags:
-    - --charlie
