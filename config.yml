@@ -55,8 +55,8 @@ parachains:
   volumePath: /acala/data # The path to mount volume and base path, default to /data
   nodes: # nodes config
   - wsPort: 9948
-    rpcPort: 9937
-    port: 30337
+    rpcPort: 9939
+    port: 30339
     flags: # additional CLI flags for this node
       - --alice
     relaychainFlags: # additional CLI flags for relaychian part
