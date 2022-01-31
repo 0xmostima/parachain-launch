@@ -31,45 +31,6 @@ parachains:
     collators: # override collators
       - alice # this imply //Alice
       - 5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty # or could be a session key public address
-      - charlie
-    sudo: alice # override sudo key to //Alice
-    runtimeGenesisConfig: # additonal genesis override
-      balances:
-        balances:
-          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, 10000000000000000]
-      tokens:
-        balances:
-          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'KUSD' }, 10000000000000000]
-  id: 2000 # override parachain id
-  parachain: true # this is parachain, not parathread
-  flags: # CLI flags for this parachain nodes
-    - --rpc-methods=unsafe
-    - --force-authoring
-    - --execution=wasm
-  relaychainFlags: # CLI flags for the relaychain port
-    - --execution=wasm
-    - --no-beefy
-  env: # environment variables for this parachain nodes
-    RUST_LOG: sc_basic_authorship=trace
-  volumePath: /acala/data # The path to mount volume and base path, default to /data
-  nodes: # nodes config
-  - wsPort: 9947
-    rpcPort: 9936
-    port: 30336
-    flags: # additional CLI flags for this node
-      - --alice
-    relaychainFlags: # additional CLI flags for relaychian part
-      - --name=relaychain-alice
-    env:
-      RUST_LOG: aura=debug # environment varitables for this node
-# Config for second parachain
-- image: acala/karura-node:2.1.1
-  chain: # this could be a string like `dev` or a config object
-    base: karura-dev # the chain to use
-    collators: # override collators
-      - alice # this imply //Alice
-      - 5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty # or could be a session key public address
-      - charlie
     sudo: alice # override sudo key to //Alice
     runtimeGenesisConfig: # additonal genesis override
       balances:
@@ -100,4 +61,40 @@ parachains:
       - --name=relaychain-alice
     env:
       RUST_LOG: aura=debug # environment varitables for this node
-
+# Config for second parachain
+- image: acala/karura-node:2.1.1
+  chain: # this could be a string like `dev` or a config object
+    base: karura-dev # the chain to use
+    collators: # override collators
+      - alice # this imply //Alice
+      - 5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty # or could be a session key public address
+    sudo: alice # override sudo key to //Alice
+    runtimeGenesisConfig: # additonal genesis override
+      balances:
+        balances:
+          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, 10000000000000000]
+      tokens:
+        balances:
+          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'KUSD' }, 10000000000000000]
+  id: 2000 # override parachain id
+  parachain: true # this is parachain, not parathread
+  flags: # CLI flags for this parachain nodes
+    - --rpc-methods=unsafe
+    - --force-authoring
+    - --execution=wasm
+  relaychainFlags: # CLI flags for the relaychain port
+    - --execution=wasm
+    - --no-beefy
+  env: # environment variables for this parachain nodes
+    RUST_LOG: sc_basic_authorship=trace
+  volumePath: /acala/data # The path to mount volume and base path, default to /data
+  nodes: # nodes config
+  - wsPort: 9947
+    rpcPort: 9936
+    port: 30336
+    flags: # additional CLI flags for this node
+      - --alice
+    relaychainFlags: # additional CLI flags for relaychian part
+      - --name=relaychain-alice
+    env:
+      RUST_LOG: aura=debug # environment varitables for this node
