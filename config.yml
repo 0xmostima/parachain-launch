@@ -68,3 +68,37 @@ parachains:
     - --bob
   - flags:
     - --charlie
+# Config for second parachain
+- image: ronyang/bifrost:0.8.1-fix_data
+  chain: # this could be a string like `dev` or a config object
+    base: bifrost-local # the chain to use
+    collators: # override collators
+      - alice # this imply //Alice
+      - rXMrmePtNnyZ61hvpjfEEZ1zmKzueUnTqijDncTzE8Wa2sJ # or could be a session key public address
+      - charlie
+    sudo: alice # override sudo key to //Alice
+  id: 3000 # override parachain id
+  parachain: true # this is parachain, not parathread
+  flags: # CLI flags for this parachain nodes
+    - --rpc-methods=unsafe
+    - --force-authoring
+    - --execution=wasm
+  relaychainFlags: # CLI flags for the relaychain port
+    - --execution=wasm
+    - --no-beefy
+  env: # environment variables for this parachain nodes
+    RUST_LOG: sc_basic_authorship=trace
+  nodes: # nodes config
+    - wsPort: 9967
+      rpcPort: 9966
+      port: 30366
+      flags: # additional CLI flags for this node
+        - --alice
+      relaychainFlags: # additional CLI flags for relaychian part
+        - --name=relaychain-alice
+      env:
+        RUST_LOG: debug # environment varitables for this node
+    - flags:
+        - --bob
+    - flags:
+        - --charlie
