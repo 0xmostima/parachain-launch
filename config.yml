@@ -68,6 +68,7 @@ parachains:
     - --bob
   - flags:
     - --charlie
+# Config for first parachain
 - image: acala/karura-node:2.1.1
   chain: # this could be a string like `dev` or a config object
     base: karura-dev # the chain to use
