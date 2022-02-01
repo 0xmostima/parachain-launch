@@ -54,9 +54,9 @@ parachains:
     RUST_LOG: sc_basic_authorship=trace
   volumePath: /acala/data # The path to mount volume and base path, default to /data
   nodes: # nodes config
-  - wsPort: 9947
-    rpcPort: 9936
-    port: 30346
+  - wsPort: 9967
+    rpcPort: 9966
+    port: 30366
     flags: # additional CLI flags for this node
       - --alice
     relaychainFlags: # additional CLI flags for relaychian part
