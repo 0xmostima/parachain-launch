@@ -1,6 +1,6 @@
 # Relaychain Configuration
 relaychain:
-  image: parity/polkadot:v0.9.8 # the docker image to use
+  image: parity/polkadot:v0.9.13 # the docker image to use
   chain: rococo-local # the chain to use
   runtimeGenesisConfig: # additonal genesis override
     configuration:
@@ -69,14 +69,21 @@ parachains:
   - flags:
     - --charlie
 # Config for second parachain
-- image: ronyang/bifrost:0.8.1-fix_data
+- image: acala/karura-node:2.1.1
   chain: # this could be a string like `dev` or a config object
-    base: bifrost-local # the chain to use
+    base: karura-dev # the chain to use
     collators: # override collators
       - alice # this imply //Alice
-      - rXMrmePtNnyZ61hvpjfEEZ1zmKzueUnTqijDncTzE8Wa2sJ # or could be a session key public address
+      - 5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty # or could be a session key public address
       - charlie
     sudo: alice # override sudo key to //Alice
+    runtimeGenesisConfig: # additonal genesis override
+      balances:
+        balances:
+          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, 10000000000000000]
+      tokens:
+        balances:
+          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'KUSD' }, 10000000000000000]
   id: 3000 # override parachain id
   parachain: true # this is parachain, not parathread
   flags: # CLI flags for this parachain nodes
@@ -88,17 +95,18 @@ parachains:
     - --no-beefy
   env: # environment variables for this parachain nodes
     RUST_LOG: sc_basic_authorship=trace
+  volumePath: /acala/data # The path to mount volume and base path, default to /data
   nodes: # nodes config
-    - wsPort: 9967
-      rpcPort: 9966
-      port: 30366
-      flags: # additional CLI flags for this node
-        - --alice
-      relaychainFlags: # additional CLI flags for relaychian part
-        - --name=relaychain-alice
-      env:
-        RUST_LOG: debug # environment varitables for this node
-    - flags:
-        - --bob
-    - flags:
-        - --charlie
+  - wsPort: 9967
+    rpcPort: 9966
+    port: 30366
+    flags: # additional CLI flags for this node
+      - --alice
+    relaychainFlags: # additional CLI flags for relaychian part
+      - --name=relaychain-alice
+    env:
+      RUST_LOG: aura=debug # environment varitables for this node
+  - flags:
+    - --bob
+  - flags:
+    - --charlie
