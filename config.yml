@@ -56,7 +56,7 @@ parachains:
   nodes: # nodes config
   - wsPort: 9947
     rpcPort: 9936
-    port: 30336
+    port: 30346
     flags: # additional CLI flags for this node
       - --alice
     relaychainFlags: # additional CLI flags for relaychian part
