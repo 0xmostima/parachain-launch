@@ -8,7 +8,7 @@ relaychain:
         validation_upgrade_frequency: 1
         validation_upgrade_delay: 1
   env: # environment variables for all relaychain nodes
-    RUST_LOG: parachain::candidate-backing=trace
+    RUST_LOG: parachain::candidate-backing=trace,info,xcm=trace,xcm-executor=trace
   flags: # additional CLI flags for all relaychain nodes
     - --rpc-methods=unsafe
     - --no-beefy
@@ -52,7 +52,7 @@ parachains:
     - --execution=wasm
     - --no-beefy
   env: # environment variables for this parachain nodes
-    RUST_LOG: sc_basic_authorship=trace
+    RUST_LOG: info,xcm=trace,xcm-executor=trace,sc_basic_authorship=trace
   volumePath: /acala/data # The path to mount volume and base path, default to /data
   nodes: # nodes config
   - wsPort: 9947
@@ -94,7 +94,7 @@ parachains:
     - --execution=wasm
     - --no-beefy
   env: # environment variables for this parachain nodes
-    RUST_LOG: sc_basic_authorship=trace
+    RUST_LOG: info,xcm=trace,xcm-executor=trace,sc_basic_authorship=trace
   volumePath: /acala/data # The path to mount volume and base path, default to /data
   nodes: # nodes config
   - wsPort: 9967
