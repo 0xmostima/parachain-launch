@@ -27,7 +27,7 @@ relaychain:
 # Parachain Configuration
 parachains:
 # Config for first parachain
-- image: acala/karura-node:2.1.1
+- image: acala/karura-node:2.2.2
   chain: # this could be a string like `dev` or a config object
     base: karura-dev # the chain to use
     collators: # override collators
@@ -69,7 +69,7 @@ parachains:
   - flags:
     - --charlie
 # Config for second parachain
-- image: acala/karura-node:2.1.1
+- image: acala/karura-node:2.2.2
   chain: # this could be a string like `dev` or a config object
     base: karura-dev # the chain to use
     collators: # override collators
