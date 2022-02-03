@@ -37,7 +37,7 @@ relaychain:
 # Parachain Configuration
 parachains:
 # Config for first parachain
-- image: bifrostnetwork/bifrost:v0.9.0
+- image: bifrostnetwork/bifrost:v0.9.23
   chain: # this could be a string like `dev` or a config object
     base: bifrost-local # the chain to use
     collators: # override collators
@@ -79,7 +79,7 @@ parachains:
   - flags:
     - --charlie
 # Config for second parachain
-- image: bifrostnetwork/bifrost:v0.9.0
+- image: bifrostnetwork/bifrost:v0.9.23
   chain: # this could be a string like `dev` or a config object
     base: bifrost-local # the chain to use
     collators: # override collators
