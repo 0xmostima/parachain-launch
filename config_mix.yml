@@ -9,12 +9,12 @@ relaychain:
         validation_upgrade_delay: 1
     hrmp:
       preopenHrmpChannels:
-        - sender: 2001
+        - sender: 2000
           recipient: 3000
           maxCapacity: 8
           maxMessageSize: 8192
         - sender: 3000
-          recipient: 2001
+          recipient: 2000
           maxCapacity: 8
           maxMessageSize: 8192
   env: # environment variables for all relaychain nodes
@@ -32,7 +32,13 @@ relaychain:
       env:
         RUST_LOG: babe=debug # environment varitables for this node
     - name: bob
+      wsPort: false
+      rpcPort: false
+      port: false
     - name: charlie
+      wsPort: false
+      rpcPort: false
+      port: false
 
 # Parachain Configuration
 parachains:
@@ -115,5 +121,11 @@ parachains:
       RUST_LOG: debug # environment varitables for this node
   - flags:
     - --bob
+     wsPort: false
+     rpcPort: false
+     port: false
   - flags:
     - --charlie
+     wsPort: false
+     rpcPort: false
+     port: false
