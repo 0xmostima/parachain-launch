@@ -39,7 +39,6 @@ parachains:
       balances:
         balances:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, 10000000000000000]
-          - [alice, 10000000000000000]
       tokens:
         balances:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'KUSD' }, 10000000000000000]
@@ -82,7 +81,6 @@ parachains:
       balances:
         balances:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, 10000000000000000]
-          - [alice, 10000000000000000]
       tokens:
         balances:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'KUSD' }, 10000000000000000]
