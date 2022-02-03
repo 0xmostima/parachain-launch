@@ -10,13 +10,13 @@ relaychain:
     hrmp:
       preopenHrmpChannels:
         - sender: 2000
-          recipient: 3000
+          recipient: 2001
           maxCapacity: 8
-          maxMessageSize: 8192
-        - sender: 3000
+          maxMessageSize: 102400
+        - sender: 2001
           recipient: 2000
           maxCapacity: 8
-          maxMessageSize: 8192
+          maxMessageSize: 102400
   env: # environment variables for all relaychain nodes
     RUST_LOG: parachain::candidate-backing=trace
   flags: # additional CLI flags for all relaychain nodes
@@ -32,7 +32,13 @@ relaychain:
       env:
         RUST_LOG: babe=debug # environment varitables for this node
     - name: bob
+      wsPort: false
+      rpcPort: false
+      port: false
     - name: charlie
+      wsPort: false
+      rpcPort: false
+      port: false
 
 # Parachain Configuration
 parachains:
@@ -75,9 +81,15 @@ parachains:
       - --name=relaychain-alice
     env:
       RUST_LOG: aura=debug # environment varitables for this node
-  - flags:
+  - wsPort: false
+    rpcPort: false
+    port: false
+    flags:
     - --bob
-  - flags:
+  - wsPort: false
+    rpcPort: false
+    port: false
+    flags:
     - --charlie
 # Config for second parachain
 - image: acala/karura-node:2.2.2
@@ -94,9 +106,9 @@ parachains:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, 10000000000000000]
       tokens:
         balances:
-          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'KUSD' }, 10000000000000000]
-          - [t6X8qpY26nsi6WDMkhbyaTz6cLtNBt7xfs4H9k94D3kM1Lm, { token: 'KUSD' }, 10000000000000000]
-  id: 3000 # override parachain id
+          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'BNC' }, 10000000000000000]
+          - [t6X8qpY26nsi6WDMkhbyaTz6cLtNBt7xfs4H9k94D3kM1Lm, { token: 'BNC' }, 10000000000000000]
+  id: 2001 # override parachain id
   parachain: true # this is parachain, not parathread
   flags: # CLI flags for this parachain nodes
     - --rpc-methods=unsafe
@@ -118,7 +130,13 @@ parachains:
       - --name=relaychain-alice
     env:
       RUST_LOG: aura=debug # environment varitables for this node
-  - flags:
+  - wsPort: false
+    rpcPort: false
+    port: false
+    flags:
     - --bob
-  - flags:
+  - wsPort: false
+    rpcPort: false
+    port: false
+    flags:
     - --charlie

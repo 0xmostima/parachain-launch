@@ -72,8 +72,14 @@ parachains:
       RUST_LOG: debug # environment varitables for this node
   - flags:
     - --bob
+      wsPort: false
+      rpcPort: false
+      port: false
   - flags:
     - --charlie
+      wsPort: false
+      rpcPort: false
+      port: false
 # Config for second parachain
 - image: bifrostnetwork/bifrost:bifrost-v0.9.24
   chain: # this could be a string like `dev` or a config object
@@ -110,5 +116,11 @@ parachains:
       RUST_LOG: debug # environment varitables for this node
   - flags:
     - --bob
+      wsPort: false
+      rpcPort: false
+      port: false
   - flags:
     - --charlie
+      wsPort: false
+      rpcPort: false
+      port: false
