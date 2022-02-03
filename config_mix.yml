@@ -80,7 +80,7 @@ parachains:
     relaychainFlags: # additional CLI flags for relaychian part
       - --name=relaychain-alice
     env:
-      RUST_LOG: aura=debug # environment varitables for this node
+      RUST_LOG: info,xcm=trace,xcm-executor=trace,sc_basic_authorship=trace,aura=debug # environment varitables for this node
   - wsPort: false
     rpcPort: false
     port: false
@@ -114,7 +114,7 @@ parachains:
     - --execution=wasm
     - --no-beefy
   env: # environment variables for this parachain nodes
-    RUST_LOG: sc_basic_authorship=trace
+    RUST_LOG: info,xcm=trace,xcm-executor=trace,sc_basic_authorship=trace,sc_basic_authorship=trace
   nodes: # nodes config
   - wsPort: 9967
     rpcPort: 9966
