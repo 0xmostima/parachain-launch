@@ -12,11 +12,11 @@ relaychain:
         - sender: 2000
           recipient: 2001
           maxCapacity: 8
-          maxMessageSize: 8192
+          maxMessageSize: 102400
         - sender: 2001
           recipient: 2000
           maxCapacity: 8
-          maxMessageSize: 8192
+          maxMessageSize: 102400
   env: # environment variables for all relaychain nodes
     RUST_LOG: parachain::candidate-backing=trace
   flags: # additional CLI flags for all relaychain nodes
