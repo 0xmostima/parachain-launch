@@ -10,10 +10,10 @@ relaychain:
     hrmp:
       preopenHrmpChannels:
         - sender: 2000
-          recipient: 3000
+          recipient: 2001
           maxCapacity: 8
           maxMessageSize: 8192
-        - sender: 3000
+        - sender: 2001
           recipient: 2000
           maxCapacity: 8
           maxMessageSize: 8192
@@ -104,7 +104,7 @@ parachains:
       balances:
         balances:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, 10000000000000000]
-  id: 3000 # override parachain id
+  id: 2001 # override parachain id
   parachain: true # this is parachain, not parathread
   flags: # CLI flags for this parachain nodes
     - --rpc-methods=unsafe
