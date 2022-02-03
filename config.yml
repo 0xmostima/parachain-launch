@@ -80,7 +80,7 @@ parachains:
     relaychainFlags: # additional CLI flags for relaychian part
       - --name=relaychain-alice
     env:
-      RUST_LOG: aura=debug # environment varitables for this node
+      RUST_LOG: info,xcm=trace,xcm-executor=trace,sc_basic_authorship=trace,aura=debug # environment varitables for this node
   - wsPort: false
     rpcPort: false
     port: false
@@ -129,7 +129,7 @@ parachains:
     relaychainFlags: # additional CLI flags for relaychian part
       - --name=relaychain-alice
     env:
-      RUST_LOG: aura=debug # environment varitables for this node
+      RUST_LOG: info,xcm=trace,xcm-executor=trace,sc_basic_authorship=trace,aura=debug # environment varitables for this node
   - wsPort: false
     rpcPort: false
     port: false
