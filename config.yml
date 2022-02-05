@@ -109,8 +109,8 @@ parachains:
         balances:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'LKSM' }, 10000000000000000]
           - [t6X8qpY26nsi6WDMkhbyaTz6cLtNBt7xfs4H9k94D3kM1Lm, { token: 'LKSM' }, 10000000000000000]
-          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'TAI' }, 10000000000000000]
-          - [t6X8qpY26nsi6WDMkhbyaTz6cLtNBt7xfs4H9k94D3kM1Lm, { token: 'TAI' }, 10000000000000000]
+          - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'BNC' }, 10000000000000000]
+          - [t6X8qpY26nsi6WDMkhbyaTz6cLtNBt7xfs4H9k94D3kM1Lm, { token: 'BNC' }, 10000000000000000]
   id: 2001 # override parachain id
   parachain: true # this is parachain, not parathread
   flags: # CLI flags for this parachain nodes
