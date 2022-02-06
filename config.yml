@@ -105,6 +105,7 @@ parachains:
       balances:
         balances:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, 10000000000000000]
+          - [5Eg2fntJ27qsari4FGrGhrMqKFDRnkNSR6UshkZYBGXmSuC8, 10000000000000000]
       tokens:
         balances:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'LKSM' }, 10000000000000000]
