@@ -108,7 +108,7 @@ parachains:
       tokens:
         balances:
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'LKSM' }, 10000000000000000]
-          - [t6X8qpY26nsi6WDMkhbyaTz6cLtNBt7xfs4H9k94D3kM1Lm, { token: 'LKSM' }, 10000000000000000]
+          - [5Eg2fntJ27qsari4FGrGhrMqKFDRnkNSR6UshkZYBGXmSuC8, { token: 'BNC' }, 10000000000000000]
           - [5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty, { token: 'BNC' }, 10000000000000000]
           - [t6X8qpY26nsi6WDMkhbyaTz6cLtNBt7xfs4H9k94D3kM1Lm, { token: 'BNC' }, 10000000000000000]
   id: 2001 # override parachain id
