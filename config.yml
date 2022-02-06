@@ -121,7 +121,7 @@ parachains:
     - --execution=wasm
     - --no-beefy
   env: # environment variables for this parachain nodes
-    RUST_LOG: info,xcm=trace,xcm-executor=trace,sc_basic_authorship=trace
+    RUST_LOG: info,xcm=trace,xcm-builder=trace,xcm-executor=trace,sc_basic_authorship=trace
   volumePath: /acala/data # The path to mount volume and base path, default to /data
   nodes: # nodes config
   - wsPort: 9967
