@@ -95,7 +95,7 @@ parachains:
 # Config for second parachain
 - image: subtensor-parachain:latest
   chain: # this could be a string like `dev` or a config object
-    base: subtensor # the chain to use
+    base: karura-dev # the chain to use
     collators: # override collators
       - alice # this imply //Alice
     sudo: alice # override sudo key to //Alice
